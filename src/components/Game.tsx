@@ -263,7 +263,7 @@ export default function Game({ initial, onHome, onNext }: { initial: SavedGame; 
             {win.newBest && <p className="best">🎉 新紀錄！</p>}
             {win.stars < 3 && <p style={{ fontSize: 15 }}>不用提示、不填錯，就能拿三顆星</p>}
             <div className="win-btns">
-              <button type="button" style={{ background: color, color: "#fff" }} onClick={onNext}>
+              <button type="button" style={{ background: color, color: "var(--on-s)" }} onClick={onNext}>
                 再玩一題
               </button>
               <button type="button" style={{ background: "#f3ead8" }} onClick={onHome}>

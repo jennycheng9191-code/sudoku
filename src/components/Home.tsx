@@ -17,7 +17,7 @@ export default function Home({ onStart, onResume }: { onStart: (s: Size, l: Leve
       <p className="subtitle">每一列、每一行、每一宮，數字都不能重複</p>
 
       {saved && (
-        <button type="button" className="resume" onClick={onResume}>
+        <button type="button" className="resume" style={{ background: `var(--s${saved.size})` }} onClick={onResume}>
           <span>▶ 繼續上一局</span>
           <span>
             <span className="num">

@@ -13,10 +13,11 @@
   --gold: #f0b43c;
   --gold-off: #e6dccb;
 
-  /* 三種盤面的主色 */
-  --s4: #4f9a4a;
-  --s6: #2f8d80;
-  --s9: #4f6fb0;
+  /* 三種盤面的主色：黃、淺紫、粉紅；都偏淺，上面的字用深色 */
+  --s4: #ffd54f;
+  --s6: #c9b3f0;
+  --s9: #f7a8c4;
+  --on-s: #33302b;
 
   --given: #33302b; /* 題目原本就有的數字 */
   --entry: #2a66c4; /* 小朋友填的數字 */
@@ -81,10 +82,9 @@ button:disabled {
   padding: 14px 18px;
   margin-bottom: 18px;
   border-radius: 18px;
-  background: var(--sel);
   font-size: 20px;
   font-weight: 700;
-  box-shadow: 0 3px 0 #e2b84a;
+  box-shadow: 0 3px 0 rgba(0, 0, 0, 0.15);
 }
 .size-card {
   background: var(--card);
@@ -100,7 +100,7 @@ button:disabled {
   margin-bottom: 12px;
 }
 .size-badge {
-  color: #fff;
+  color: var(--on-s);
   border-radius: 14px;
   padding: 4px 12px;
   font-size: 24px;
@@ -117,7 +117,7 @@ button:disabled {
 .level-btn {
   border-radius: 16px;
   padding: 12px 4px 10px;
-  color: #fff;
+  color: var(--on-s);
   font-size: 22px;
   font-weight: 700;
   line-height: 1.2;
@@ -145,11 +145,12 @@ button:disabled {
 .star-off {
   color: var(--gold-off);
 }
+/* 按鈕底色偏淺，金星會被黃底吃掉，改用深琥珀色 */
 .level-btn .star-off {
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(0, 0, 0, 0.15);
 }
 .level-btn .star-on {
-  color: #ffe08a;
+  color: #a35f00;
 }
 .settings-row {
   display: flex;
