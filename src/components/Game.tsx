@@ -11,7 +11,8 @@ interface Win {
 }
 
 // 格子數字大小：盤面越大字越小，手機上 9×9 約 28px
-const CELL_FONT: Record<number, string> = { 4: "min(14vw, 64px)", 6: "min(10vw, 46px)", 9: "min(7.2vw, 34px)" };
+// cqw＝盤面寬度的百分比：電腦版盤面隨螢幕高度縮小時，字也跟著縮，最下排才不會被擠出框
+const CELL_FONT: Record<number, string> = { 4: "min(14vw, 64px, 18cqw)", 6: "min(10vw, 46px, 13cqw)", 9: "min(7.2vw, 34px, 9cqw)" };
 
 export default function Game({ initial, onHome, onNext }: { initial: SavedGame; onHome: () => void; onNext: () => void }) {
   const { elapsed: initialElapsed, ...initialBoard } = initial;
@@ -179,7 +180,7 @@ export default function Game({ initial, onHome, onNext }: { initial: SavedGame; 
         )}
       </div>
 
-      <div className="board" style={{ gridTemplateColumns: `repeat(${n}, 1fr)` }}>
+      <div className="board" style={{ gridTemplateColumns: `repeat(${n}, 1fr)`, gridTemplateRows: `repeat(${n}, 1fr)` }}>
         {b.values.map((v, i) => {
           const r = g.row[i];
           const c = g.col[i];
